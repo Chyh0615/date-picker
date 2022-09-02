@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+    <script src="https://kit.fontawesome.com/5a27d45b66.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="jquery-ui-1.13.1/jquery-ui.css">
+    <link rel="stylesheet" href="jquery-ui-1.13.1/jquery-ui.structure.css">
+    <link rel="stylesheet" href="jquery-ui-1.13.1/jquery-ui.theme.css">
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <section>
+            <div class="tab">
+                <div @click="toggleTab(true)" class="selection" :class="{ active: isShowingTab }"><i class="fa-solid fa-hotel"></i><h3>Hotel</h3></div>
+                <div @click="toggleTab(false)" class="selection" :class="{ active: !isShowingTab }"><i class="bi bi-airplane-fill"></i><h3>Flights</h3></div>
+            </div>
+            <div v-show="isShowingTab === true" class="hotel">
+                <div class="city">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Enter a destination">
+                </div>
+                <div class="date">
+                    <div class="date-select"><i class="fa-solid fa-calendar-days"></i><input class="from" type="text" placeholder="FROM"></div>
+                    <div class="date-select"><i class="fa-solid fa-calendar-days"></i><input class="to" type="text" placeholder="TO"></div>
+                </div>
+                <div class="people">
+                    <i class="bi bi-person-fill"></i>
+                    <input id="room" type="text" placeholder="Adult, Room" @click="showItem = !showItem">
+                </div>
+                <div class="item" v-show="showItem">
+                    <div class="detail" v-for="item in details">
+                        <i class="bi bi-dash-square" @click="minusNum(item)"></i><p>{{ item.nums }} {{ item.name }}</p><i class="bi bi-plus-square" @click="plusNum(item)"></i>
+                    </div>
+                </div>
+            </div>
+            <div v-show="isShowingTab === false" class="airplane">
+                <div class="ticket-select"><button class="option" v-for="(item, index) in category" @click="isRoundTrip(index)" :class="[index === active ? 'option--active' : '']">{{ category[index] }}</button></div>
+                <div class="flying">
+                    <div class="location"><i class="fa-solid fa-plane"></i></i><input id="place" type="text" placeholder="Flying from"></div>
+                    <div class="icon"><i class="bi bi-arrow-left-right rotate" @click="switchtext()"></i></div>
+                    <div class="location"><i class="bi bi-geo-alt-fill"></i><input id="destination" type="text" placeholder="Flying to"></div>
+                </div>
+                <div class="flying-date">
+                    <div class="select"><i class="fa-solid fa-calendar-days"></i><input class="depart" type="text" placeholder="Departure"></div>
+                    <div v-show="active === 1" class="select"><i class="fa-solid fa-calendar-days"></i><input class="return" type="text" placeholder="Return"></div>
+                </div>
+                <div class="passenger">
+                    <i class="bi bi-person-fill"></i>
+                    <input id="passenger" type="text" placeholder="Passenger" @click="showPassenger = !showPassenger">
+                </div>
+                <div class="item" v-show="showPassenger">
+                    <div class="detail" v-for="item in passenger">
+                        <i class="bi bi-dash-square" @click="subtractNum(item)"></i><p>{{ item.number }} {{ item.client }}</p><i class="bi bi-plus-square" @click="addNum(item)"></i>
+                    </div>
+                </div>
+                <div class="seat">
+                    <button class="kind" v-for="(item, index) in seats" @click="whatSeat(index)" :class="[index === seat ? 'kind--seat' : '']">{{ seats[index] }}</button>
+                </div>
+            </div>
+        </section>
+        <div class="search"><button>Search</button></div>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-ui-1.13.1/jquery-ui.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

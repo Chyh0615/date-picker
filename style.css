@@ -1,0 +1,315 @@
+@charset "UTF-8";
+@import url("http://fonts.cdnfonts.com/css/cera-round-pro");
+section .airplane .passenger, section .hotel .people, section .hotel .city {
+  display: flex;
+  margin-bottom: 30px;
+  padding: 15px;
+  width: 100%;
+  align-items: center;
+  border: 0.2px solid black;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+}
+section .airplane .passenger i, section .hotel .people i, section .hotel .city i {
+  padding-right: 20px;
+  font-size: 20px;
+}
+section .airplane .passenger input, section .hotel .people input, section .hotel .city input {
+  padding-left: 10px;
+  height: 40px;
+  border: none;
+}
+section .airplane .passenger input:focus, section .hotel .people input:focus, section .hotel .city input:focus {
+  outline: none;
+}
+
+section .airplane .seat .kind, section .airplane .ticket-select .option {
+  border: 1px solid rgb(83, 146, 249);
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(83, 146, 249);
+}
+
+section .airplane .seat .kind--seat, section .airplane .flying .rotate:active, section .airplane .ticket-select .option--active {
+  background-color: rgb(83, 146, 249);
+  color: rgb(255, 255, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cera Round Pro", "Microsoft JhengHei", "微軟正黑體", sans-serif;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  cursor: context-menu;
+  list-style: none;
+  -webkit-user-drag: none;
+}
+
+body {
+  background-color: rgb(18, 18, 18);
+}
+
+section {
+  margin: 50px auto 0 auto;
+  padding: 20px 40px 30px 40px;
+  width: 70%;
+  border-radius: 16px;
+  background-color: rgb(248, 247, 249);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 3px;
+}
+section .tab {
+  display: inline;
+  width: 100%;
+}
+section .tab .selection {
+  display: inline-block;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  width: 50%;
+  text-align: center;
+}
+section .tab .selection.active {
+  border-bottom: 2px solid rgb(83, 146, 249);
+  color: rgb(83, 146, 249);
+}
+section .tab .selection i {
+  font-size: 24px;
+}
+section .hotel .city input {
+  width: 100%;
+}
+section .hotel .date {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+section .hotel .date .date-select {
+  padding: 15px;
+  border: 0.2px solid black;
+  border-radius: 8px;
+  width: 49%;
+  background-color: rgb(255, 255, 255);
+}
+section .hotel .date .date-select i {
+  padding-right: 20px;
+  font-size: 20px;
+}
+section .hotel .date .date-select input {
+  width: 80%;
+  padding-left: 10px;
+  height: 40px;
+  border: none;
+}
+section .hotel .date .date-select input:focus {
+  outline: none;
+}
+section .hotel .people {
+  margin-bottom: 15px;
+}
+section .hotel .people input {
+  width: 100%;
+}
+section .hotel .item {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 50%;
+  border: 0.2px solid black;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
+}
+section .hotel .item .detail {
+  display: flex;
+  margin: 10px 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+}
+section .hotel .item .detail i {
+  font-size: 20px;
+}
+section .hotel .item i:active {
+  color: rgb(83, 146, 249);
+}
+section .airplane .ticket-select {
+  width: 100%;
+  margin-bottom: 30px;
+}
+section .airplane .ticket-select .option {
+  margin-right: 20px;
+  padding: 10px;
+  width: 120px;
+}
+section .airplane .flying {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+section .airplane .flying .location {
+  padding: 15px;
+  border: 0.2px solid black;
+  border-radius: 8px;
+  width: 49%;
+  background-color: rgb(255, 255, 255);
+}
+section .airplane .flying .location i {
+  padding-right: 20px;
+  font-size: 20px;
+}
+section .airplane .flying .location input {
+  width: 80%;
+  padding-left: 10px;
+  height: 40px;
+  border: none;
+}
+section .airplane .flying .location input:focus {
+  outline: none;
+}
+section .airplane .flying .rotate {
+  position: absolute;
+  margin-top: -20px;
+  padding: 5px 0;
+  right: 48.5%;
+  width: 40px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 1px;
+  font-size: 20px;
+  transition: all 0.5s ease-in-out;
+}
+section .airplane .flying .turn {
+  transform: rotate(360deg);
+}
+section .airplane .flying-date {
+  display: flex;
+  margin-bottom: 30px;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+section .airplane .flying-date .select {
+  padding: 15px;
+  border: 0.2px solid black;
+  border-radius: 8px;
+  width: 49%;
+  background-color: rgb(255, 255, 255);
+}
+section .airplane .flying-date .select i {
+  padding-right: 20px;
+  font-size: 20px;
+}
+section .airplane .flying-date .select input {
+  width: 80%;
+  padding-left: 10px;
+  height: 40px;
+  border: none;
+}
+section .airplane .flying-date .select input:focus {
+  outline: none;
+}
+section .airplane .passenger {
+  margin-bottom: 15px;
+}
+section .airplane .passenger input {
+  width: 100%;
+}
+section .airplane .item {
+  margin-bottom: 15px;
+  padding: 10px;
+  width: 50%;
+  border: 0.2px solid black;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 3px 10px 20px rgba(0, 0, 0, 0.2);
+}
+section .airplane .item .detail {
+  display: flex;
+  margin: 10px 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+}
+section .airplane .item .detail i {
+  font-size: 20px;
+}
+section .airplane .seat {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: center;
+}
+section .airplane .seat .kind {
+  display: flex;
+  margin: 5px;
+  padding: 10px 0;
+  width: calc(50% - 12px);
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+.search {
+  display: flex;
+  margin-bottom: 50px;
+  justify-content: center;
+}
+.search button {
+  margin-top: -28px;
+  padding: 10px 0;
+  width: 20%;
+  font-size: 24px;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(83, 146, 249);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 1px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-transform: uppercase;
+}
+.search button:active {
+  background-color: rgb(83, 122, 184);
+}
+
+.ui-datepicker {
+  width: 300px;
+  padding: 10px;
+}
+
+.ui-datepicker .ui-datepicker-header {
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+  height: 100%;
+}
+
+.ui-widget-content {
+  background: rgb(248, 247, 249);
+  color: rgb(83, 146, 249);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 3px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default {
+  background: rgb(255, 255, 255);
+  text-align: center;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-state-active, .ui-widget-content .ui-state-active {
+  background: rgb(83, 146, 249);
+  color: rgb(255, 255, 255);
+}/*# sourceMappingURL=style.css.map */
